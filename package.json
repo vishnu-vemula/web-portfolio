@@ -1,14 +1,33 @@
 {
-	"name": "reactfolio",
-	"version": "1.1.0",
-	"description": "Personal portfolio template built using Reactjs",
+	"name": "v3-portfolio",
+	"version": "2.0.0",
+	"description": "V³ (V-Cube) — the personal portfolio of Vishnu Vardhan Vemula, Full-Stack Developer & AI/ML Enthusiast. Built with React, featuring a multi-page layout, responsive design, SEO optimization, and Google Analytics integration.",
+	"keywords": [
+		"portfolio",
+		"react",
+		"personal-website",
+		"full-stack-developer",
+		"mern",
+		"machine-learning"
+	],
 	"author": {
-		"name": "Tharindu N. Madhusanka",
-		"email": "mail@tharindu.dev",
-		"url": "https://tharindu.dev"
+		"name": "Vishnu Vardhan Vemula",
+		"email": "vishnu.157979@gmail.com",
+		"url": "https://github.com/Vishnu122101"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vishnu-vemula/React-Web-Portfolio.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vishnu-vemula/React-Web-Portfolio/issues"
 	},
 	"license": "MIT",
 	"private": true,
+	"engines": {
+		"node": ">=16.0.0",
+		"npm": ">=8.0.0"
+	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
@@ -31,6 +50,7 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
+		"test:ci": "react-scripts test --watchAll=false",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {

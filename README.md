@@ -1,128 +1,169 @@
-# Reactfolio V1.2 👨‍💻
+# V³ — Vishnu Vardhan Vemula · Portfolio
 
-Reactfolio is a modern and customizable personal portfolio web template built with React.
-This version is customized by **Vishnu Vardhan Vemula** to showcase his projects, skills, and experience as a **Full-Stack Developer & AI/ML Enthusiast**.
+<div align="center">
 
-With its responsive design and clean code, Reactfolio can be easily tailored to suit individual needs, making it an ideal choice for developers, designers, and creatives who want to present their work professionally.
+<img src="public/homepage.jpg" alt="V³ Portfolio" width="800" />
 
-<center>
-<img src="https://cdn.tharindu.dev/reactfolio.jpg" alt="Reactfolio" />
-</center>
+**A production-grade, multi-page personal portfolio** for a Full-Stack Developer & AI/ML Enthusiast — fast, responsive, SEO-optimized, and fully customizable through a single data layer.
 
-🚀 **Live Demo**: [Portfolio Website](https://github.com/Vishnu122101)
+[![CI](https://github.com/vishnu-vemula/React-Web-Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/vishnu-vemula/React-Web-Portfolio/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev)
+[![Node](https://img.shields.io/badge/Node-%3E%3D16-339933.svg)](https://nodejs.org)
 
----
-
-- [Reactfolio V1.2 👨‍💻](#reactfolio-v12-)
-  - [📙 Features](#-features)
-  - [📚 Getting Started](#-getting-started)
-  - [🛠 Installation and Setup Instructions](#-installation-and-setup-instructions)
-  - [📁 Folder Structure](#-folder-structure)
-  - [⚙️ Configurations](#️-configurations)
-  - [📈 Google Analytics](#-google-analytics)
-  - [🚀 Building the React App](#-building-the-react-app)
-  - [🤔 FAQ](#-faq)
-  - [🌱 Contribution](#-contribution)
+</div>
 
 ---
 
-## 📙 Features
+## About
 
-* 📖 Multi-Page Layout
+**V³** ("V-Cube") takes its name from the three V's — **V**ishnu **V**ardhan **V**emula. It is a modern personal portfolio built with React that showcases projects, articles, skills, and professional experience. Every piece of content lives in a single, well-organized data layer, so the entire site can be customized without touching any component code.
 
-  * Home
-  * About
-  * Projects
-  * Articles
-  * Contact
-* 📱 Fully Responsive
-* 🛠 Easy Configurations
+## Features
 
----
+- **Multi-page layout** — Home, About, Projects, Articles, Article reader, and Contact pages, plus a custom 404 page
+- **Fully responsive** — optimized for mobile, tablet, and desktop
+- **Route-based code splitting** — pages are lazy-loaded for a faster first paint
+- **Error boundary** — graceful failure handling instead of a white screen
+- **SEO ready** — per-page titles, meta descriptions, keywords, Open Graph / Twitter cards, and JSON-LD structured data
+- **Google Analytics 4** — pluggable via environment variables, disabled by default
+- **Zero-hardcoding** — all content (profile, socials, projects, articles, SEO) is driven from `/src/data`
+- **Continuous Integration** — automated build + test checks on every push and pull request
 
-## 📚 Getting Started
+## Tech Stack
 
-Clone down this repository.
-You will need **NodeJS** and **git** installed globally on your machine.
+| Category | Technology |
+| --- | --- |
+| Framework | React 18 (Create React App) |
+| Routing | React Router v6 |
+| Styling | CSS (custom design system), Styled Components |
+| Icons | Font Awesome |
+| SEO | React Helmet |
+| Analytics | react-ga4 (Google Analytics 4) |
+| Testing | React Testing Library + Jest |
+| CI | GitHub Actions |
 
----
+## Getting Started
 
-## 🛠 Installation and Setup Instructions
+### Prerequisites
 
-1. Install dependencies:
+- **Node.js** ≥ 16 (LTS recommended)
+- **npm** ≥ 8
+- **Git**
 
-   ```bash
-   npm install
-   ```
+### Installation
 
-2. Run the project in development mode:
+```bash
+git clone https://github.com/vishnu-vemula/React-Web-Portfolio.git
+cd React-Web-Portfolio
+npm install
+```
 
-   ```bash
-   npm start
-   ```
+### Development
 
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
-   The app will reload automatically if you make edits.
+```bash
+npm start
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) — the app hot-reloads on edits.
 
-## 📁 Folder Structure
+### Available Scripts
 
-* `/public`: Publicly accessible assets (images, media).
-* `/src`: Core application code.
+| Command | Description |
+| --- | --- |
+| `npm start` | Runs the app in development mode |
+| `npm run build` | Creates an optimized production bundle in `build/` |
+| `npm test` | Runs tests in interactive watch mode |
+| `npm run test:ci` | Runs tests once (used in CI) |
+| `npm run eject` | Ejects from CRA (one-way operation — not recommended) |
 
-  * `/src/components/`: Reusable UI components.
-  * `/src/data`: Configurations (user data, SEO, analytics).
-  * `/src/pages`: Page layouts (Home, About, Projects, etc.).
+## Configuration
 
----
+All portfolio content is managed from **`/src/data`** — no component changes required:
 
-## ⚙️ Configurations
+| File | Purpose |
+| --- | --- |
+| `user.js` | Personal details, social links, and project listings |
+| `articles.js` | Article/blog content rendered on the Articles pages |
+| `seo.js` | Per-page SEO titles, descriptions, and keywords |
+| `tracking.js` | Google Analytics entry point (reads from env) |
+| `styles.css` | Global theme — colors, fonts, and UI variables |
 
-All your portfolio content can be managed from `/src/data/`.
+### Environment Variables
 
-* `INFO.js` → Contains personal details, socials, and project data (already customized for Vishnu).
-* `articles.js` → Add your blogs/articles here.
-* `seo.js` → Manage SEO metadata (titles, keywords, descriptions).
-* `styles.css` → Customize colors, fonts, and UI theme.
+Copy the example file and add your values:
 
-💡 Even if you are a beginner, you can easily update these files to personalize your portfolio.
+```bash
+cp .env.example .env
+```
 
----
+| Variable | Description |
+| --- | --- |
+| `REACT_APP_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (`G-XXXXXXXXXX`). Leave empty to disable analytics. |
 
-## 📈 Google Analytics
+## Project Structure
 
-Add your **Google Analytics 4 MEASUREMENT ID** to `/src/data/tracking.js`.
-[Find your Measurement ID here](https://support.google.com/analytics/answer/9539598?hl=en).
+```
+v3-portfolio/
+├── public/                  # Static assets served as-is (images, favicon)
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── about/           #   About-page widgets (socials)
+│   │   ├── articles/        #   Article cards
+│   │   ├── common/          #   NavBar, Footer, Logo, ErrorBoundary
+│   │   └── homepage/        #   Homepage sections (works, article previews)
+│   ├── data/                # ✏️  All editable content lives here
+│   ├── pages/               # Page-level layouts + page-specific styles
+│   ├── App.js               # Routes (lazy-loaded) + analytics bootstrap
+│   └── index.js             # Application entry point
+├── .github/                 # Issue templates, PR template, CI workflow
+└── package.json
+```
 
----
+## Testing
 
-## 🚀 Building the React App
+```bash
+npm run test:ci
+```
 
-To create a production build:
+Smoke tests verify that the app renders correctly with its core navigation. See `src/App.test.js` as a starting point and extend coverage as the project grows.
+
+## Deployment
+
+The production build outputs a static site — deployable anywhere static files are supported.
+
+<details>
+<summary><b>Vercel</b></summary>
+
+```bash
+npm i -g vercel
+vercel
+```
+Framework preset: **Create React App** (auto-detected).
+
+</details>
+
+<details>
+<summary><b>Netlify</b></summary>
+
+- Build command: `npm run build`
+- Publish directory: `build`
+
+Add a `public/_redirects` file with `/* /index.html 200` to support client-side routing.
+
+</details>
+
+<details>
+<summary><b>Apache / self-hosted</b></summary>
 
 ```bash
 npm run build
-```
-
-This generates an optimized production bundle inside the `build/` folder.
-Deploy the contents of `build/` to your hosting service (Vercel, Netlify, or your own server).
-
-For manual server deployment (example with Apache):
-
-```bash
 scp -r build/* user@example.com:/var/www/html
 ```
 
----
+Enable SPA routing with `.htaccess`:
 
-## 🤔 FAQ
-
-**Q1. Why are subpages only accessible via navigation but not direct URLs?**
-
-If you’re hosting with Apache, add this to your `.htaccess` file:
-
-```c
+```apache
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -134,12 +175,35 @@ If you’re hosting with Apache, add this to your `.htaccess` file:
 </IfModule>
 ```
 
----
+</details>
 
-## 🌱 Contribution
+## Continuous Integration
 
-This is **Vishnu’s personal portfolio**, but Reactfolio is open-source.
-If you’d like to improve this template or add features, feel free to fork the project and experiment!
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push and pull request:
 
-💡 Built with ❤️ by [Vishnu Vardhan Vemula](https://www.linkedin.com/in/vishnu-vardhan-vemula/)
+1. `npm ci` — clean, reproducible installs
+2. `npm run test:ci` — test suite
+3. `npm run build` — production build
 
+Tested against Node.js 18 and 20.
+
+## FAQ
+
+**Q: Subpages 404 when refreshing or opening a direct URL.**
+Client-side routing requires all requests to fall through to `index.html`. Use the redirects/rewrite configuration shown in the [Deployment](#deployment) section for your host.
+
+**Q: Analytics isn't showing data.**
+Ensure `REACT_APP_GA_MEASUREMENT_ID` is set in your environment **at build time** (CRA inlines env vars during `npm run build`).
+
+## Contributing
+
+Issues and pull requests are welcome. Please use the issue templates in `.github/ISSUE_TEMPLATE/` and the PR checklist when submitting changes.
+
+## License
+
+Distributed under the [MIT License](LICENSE).
+
+## Credits
+
+- **Vishnu Vardhan Vemula** — author & maintainer · [GitHub](https://github.com/Vishnu122101) · [LinkedIn](https://www.linkedin.com/in/vishnu-vardhan-vemula-a249191b8/)
+- Initially based on [Reactfolio](https://github.com/1ucius/reactfolio) by Tharindu N. Madhusanka, substantially customized and extended.

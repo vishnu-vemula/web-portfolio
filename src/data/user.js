@@ -3,7 +3,7 @@ const INFO = {
 		title: "Portfolio | Vishnu Vardhan Vemula",
 		name: "Vishnu Vardhan Vemula",
 		email: "vishnu.157979@gmail.com",
-		logo: "../logo.png", // You can replace with your custom logo if available
+		logo: "https://media.licdn.com/dms/image/v2/D4D03AQFCkqozsbWHWA/profile-displayphoto-shrink_400_400/B4DZYQ5nRvG8Ak-/0/1744040262789?e=2147483647&v=beta&t=2rN7FlItPnfIGI16Uce0gQvfQndNDGz4sxMp60uOgeI",
 	},
 
 	socials: {

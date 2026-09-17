@@ -71,7 +71,17 @@ const Homepage = () => {
 
 	return (
 		<React.Fragment>
-			
+			<Helmet>
+				<title>{`V³ | ${INFO.main.title}`}</title>
+				<meta name="description" content={currentSEO.description} />
+				<meta
+					name="keywords"
+					content={currentSEO.keywords.join(", ")}
+				/>
+				<meta property="og:title" content={INFO.main.title} />
+				<meta property="og:description" content={currentSEO.description} />
+				<meta property="og:type" content="website" />
+			</Helmet>
 
 			<div className="page-content">
 				<NavBar active="home" />
